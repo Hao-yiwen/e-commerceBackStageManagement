@@ -5,6 +5,14 @@ import { Layout } from 'antd';
 import LeftNav from '../../components/left-nav'
 import Header from '../../components/header'
 import Home from '../home/home'
+import Category from '../category/category';
+import Product from '../product/product'
+import User from '../user/user'
+import Role from '../role/role'
+import Bar from '../charts/bar'
+import Line from '../charts/line'
+import Pie from '../charts/pie'
+
 
 const { Footer, Sider, Content } = Layout;
 
@@ -26,15 +34,13 @@ export default class Admin extends Component{
                     <Content style={{margin:20,backgroundColor:'#fff'}}>
                         <Switch>
                             <Route path="/home" component={Home}></Route>
-                            <Route path="/products" component={Home}></Route>
-                            <Route path="/category" component={Home}></Route>
-                            <Route path="/product" component={Home}></Route>
-                            <Route path="/user" component={Home}></Route>
-                            <Route path="/role" component={Home}></Route>
-                            <Route path="/charts" component={Home}></Route>
-                            <Route path="/charts/bar" component={Home}></Route>
-                            <Route path="/charts/line" component={Home}></Route>
-                            <Route path="/charts/pie" component={Home}></Route>
+                            <Route path="/category" component={Category}></Route>
+                            {/* <Route path="/product" component={Product}></Route>
+                            <Route path="/user" component={User}></Route>
+                            <Route path="/role" component={Role}></Route>
+                            <Route path="/charts/bar" component={Bar}></Route>
+                            <Route path="/charts/line" component={Line}></Route>
+                            <Route path="/charts/pie" component={Pie}></Route> */}
                             <Redirect to='/home'></Redirect>
                         </Switch>
                     </Content>

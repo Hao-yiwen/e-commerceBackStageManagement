@@ -1,5 +1,17 @@
 import React,{Component} from 'react'
 import './index.less'
+import {
+    MailOutlined,
+    LineChartOutlined,
+    DatabaseOutlined,
+    CoffeeOutlined,
+    FileProtectOutlined,
+    HistoryOutlined,
+    PartitionOutlined,
+    UserOutlined,
+    ThunderboltOutlined,
+    StarOutlined
+  } from '@ant-design/icons';
 import logo from '../../assets/images/react-admin图标.svg'
 import menuList from '../../config/menuConfig'
 import {Link, withRouter} from 'react-router-dom'
@@ -14,8 +26,31 @@ class LeftNav extends Component{
                 pre.push(
                     (<Menu.Item key={item.key}>
                         <Link to={item.key}>
-                            <Icon type={item.icon}>
-                            </Icon>
+                            {
+                                item.icon==='user'&&<LineChartOutlined></LineChartOutlined>
+                            }
+                            {
+                                item.icon==='home'&&<MailOutlined></MailOutlined>
+                            }
+                            {
+                                item.icon=='safety'&&<DatabaseOutlined></DatabaseOutlined>
+                            }
+                            {
+                                item.icon=='bars'&&<CoffeeOutlined></CoffeeOutlined>
+                            }
+                            {
+                                item.icon=='tool'&&<FileProtectOutlined></FileProtectOutlined>
+                            }
+                            {
+                                item.icon=='bar-chart'&&<HistoryOutlined></HistoryOutlined>
+                            }
+                            {
+                                item.icon=='line-chart'&&<PartitionOutlined></PartitionOutlined>
+                            }
+                            {
+                                item.icon=='pie-chart'&&<UserOutlined></UserOutlined>
+                            }
+                            
                             <span>{item.title}</span>
                         </Link>
                       </Menu.Item>)
@@ -30,7 +65,12 @@ class LeftNav extends Component{
                 pre.push(
                     <SubMenu key={item.key} title={
                         <span>
-                            <Icon type={item.icon}></Icon>
+                            {
+                                item.icon==='appstore'&&<ThunderboltOutlined></ThunderboltOutlined>
+                            }
+                            {
+                                item.icon==='area-chart'&&<StarOutlined></StarOutlined>
+                            }
                             <span>{item.title}</span>
                         </span>
                     }>

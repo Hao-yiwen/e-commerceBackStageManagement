@@ -12,6 +12,9 @@ import { message } from 'antd'
 //     return ajax('/login',{username,password},'POST')
 // }
 
+const BASE='http://localhost:5000'
+
+
 export const reqlogin=(username,password)=>ajax('/login',{username,password},'POST')
 
 export const reqAddUser=(user)=>ajax('/manage/user/add',user,'POST')
@@ -34,5 +37,13 @@ export const reqWeather=(city)=>{
         })
     })
 }
-reqWeather('北京')
 
+// 获取一级/二级分类的参数
+export const reqCategorys=(parentId)=>ajax('/manage/category/list',{parentId});
+
+// 添加分类
+export const reqAddCategory=(categoryName,parentId)=>ajax('/manage/category/add',{categoryName,parentId},'POST');
+
+
+//更新分类
+export const reqUpdateCategory=({categoryName,parentId})=>ajax(BASE+'/manage/category/add',{categoryName,parentId},'POST');
